@@ -5,14 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - id: get_sha
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Self test
         id: selftest
         uses: Nats-ji/3dm-release-action@master
         with:
           appid: ${{secrets.APPID}}
           appkey: ${{secrets.APPKEY}}
-          mod_id: "132580"
-          mod_title: MY MOD
+          mod_id: "174122"
+          mod_version: ${{ steps.get_sha.outputs.sha_short }}
+          mod_content: README.md
 
       - name: Check outputs
         run: |

@@ -19,8 +19,15 @@ def main():
         "mods_key": mod_tags,
         "mods_version": mod_version,
         "mods_desc": mod_desc,
-        "mods_content": mod_content
+        "mods_content": ""
     }
+
+    if mod_content != "":
+        markdown_file = open(mod_content, "r", encoding="UTF-8")
+        lines = markdown_file.readlines()
+        markdown_file.close()
+        md_str = "".join(lines)
+        mod["mods_content"] = md_str
 
     mod = json.dumps(mod)
 
