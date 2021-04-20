@@ -43,21 +43,21 @@ jobs:
 
 ### 输入参数
 
-| 输入参数                                             | 描述                                        |
-|------------------------------------------------------|-----------------------------------------------|
-| `appid`  | Mod更新API的APPID |
-| `appkey` | Mod更新API的APPKEY |
-| `mod_id` | 你想要更新的Mod的ID号 |
-| `mod_title` (可选) | Mod的标题 |
-| `mod_tags` (可选) | Mod的标签 |
-| `mod_version` (可选) | Mod的版本号 |
-| `mod_desc` (可选) | Mod的简单描述 |
-| `mod_content` (可选) | Mod的详情介绍的Markdown文件路径 |
+| 输入参数  | 描述 | 示例 |
+| ---------|------|------|
+| `appid` | Mod更新API的APPID | ${{ secrets.APPID }} |
+| `appkey` | Mod更新API的APPKEY | ${{ secrets.APPKEY }} |
+| `mod_id` | 你想要更新的Mod的ID号 | 548964 |
+| `mod_title` （可选） | Mod的标题 | 我的Mod |
+| `mod_tags` （可选） | Mod的标签 | 修改器, 中文, 原创 |
+| `mod_version` （可选） | Mod的版本号 | v1.2.5 |
+| `mod_desc` （可选） | Mod的简单描述 | 我的超强修改器Mod |
+| `mod_content` （可选） | Mod的详情介绍的Markdown文件路径 | README.md |
 
 ### 输出
 
-| 输出                                             | 描述                                        |
-|------------------------------------------------------|-----------------------------------------------|
+| 输出 | 描述 |
+|------|-----|
 | `response`  | 服务器的返回内容  |
 
 ## 如何使用输出

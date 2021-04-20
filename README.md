@@ -41,16 +41,16 @@ jobs:
 
 ### Inputs
 
-| Input                                             | Description                                        |
-|------------------------------------------------------|-----------------------------------------------|
-| `appid`  | APP ID for the mod uploading API |
-| `appkey` | APP key for the mod uploading API |
-| `mod_id` | The id of the mod you wish to upload |
-| `mod_title` (optional) | The title of your mod |
-| `mod_tags` (optional) | The tags for you mod |
-| `mod_version` (optional) | The version of your mod |
-| `mod_desc` (optional) | A short description of your mod |
-| `mod_content` (optional) | File path to the Markdown file for Mod descriptions |
+| Input                      | Description                                         | Example                  |
+|----------------------------|-----------------------------------------------------|--------------------------|
+| `appid`                    | APP ID for the mod uploading API                    | ${{ secrets.APPID }}     |
+| `appkey`                   | APP key for the mod uploading API                   | ${{ secrets.APPKEY }}    |
+| `mod_id`                   | The id of the mod you wish to upload                | 548964                   |
+| `mod_title` (optional)     | The title of your mod                               | My mod                   |
+| `mod_tags` (optional)      | The tags for you mod                                | cyberpunk, cheat, script |
+| `mod_version` (optional)   | The version of your mod                             | v1.2.5                   |
+| `mod_desc` (optional)      | A short description of your mod                     | This is my mod           |
+| `mod_content` (optional)   | File path to the Markdown file for Mod descriptions | README.md                |
 
 ### Outputs
 
