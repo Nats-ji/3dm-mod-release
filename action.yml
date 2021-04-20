@@ -1,6 +1,9 @@
 name: "3dm Mod Release Action"
 description: "Update mod files and mod information on 3dm mod site."
 author: "Mingming Cui"
+branding:
+  icon: 'upload-cloud'  
+  color: 'orange'
 inputs:
   appid:
     description: "APP ID for the mod uploading API"
