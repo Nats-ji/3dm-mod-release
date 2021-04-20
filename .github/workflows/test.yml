@@ -1,0 +1,19 @@
+name: Integration Test
+on: [push]
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+        uses: Nats-ji/3dm-release-action@master
+        with:
+          appid: ${{secrets.APPID}}
+          appkey: ${{secrets.APPKEY}}
+          mod_id: "132580"
+          mod_title: MY MOD
+
+      - name: Check outputs
+        run: |
+          echo ${{ steps.selftest.outputs.RESPONSE }}

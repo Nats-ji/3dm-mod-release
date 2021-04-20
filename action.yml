@@ -1,0 +1,37 @@
+name: "3dm Mod Release Action"
+description: "Update mod files and mod information on 3dm mod site."
+author: "Mingming Cui"
+inputs:
+  appid:
+    description: "APP ID for the mod uploading API"
+    required: true
+    default: ""
+  appkey:
+    description: "APP key for the mod uploading API"
+    required: true
+    default: ""
+  mod_id:
+    description: "The id of the mod you wish to upload"
+    required: true
+    default: ""
+  mod_title:
+    description: "The title of your mod"
+    default: ""
+  mod_tags:
+    description: "The tags for you mod"
+    default: ""
+  mod_version:
+    description: "The version of your mod"
+    default: ""
+  mod_desc:
+    description: "A short description of your mod"
+    default: ""
+  mod_content:
+    description: "A detailed description using Markdown"
+    default: ""
+outputs:
+  response:
+    description: "Response from the server"
+runs:
+  using: "docker"
+  image: "Dockerfile"
