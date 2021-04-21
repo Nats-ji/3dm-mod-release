@@ -2,7 +2,7 @@ name: "3dm Mod Release Action"
 description: "Update mod files and mod information on 3dm mod site."
 author: "Mingming Cui"
 branding:
-  icon: 'upload-cloud'  
+  icon: 'upload-cloud'
   color: 'orange'
 inputs:
   appid:
@@ -30,7 +30,10 @@ inputs:
     description: "A short description of your mod"
     default: ""
   mod_content:
-    description: "A detailed description using Markdown"
+    description: "File path to the Markdown file for Mod descriptions"
+    default: ""
+  mod_filepath:
+    description: "Path to your mod file"
     default: ""
 outputs:
   response:

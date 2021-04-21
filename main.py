@@ -12,6 +12,7 @@ def main():
     mod_version = os.environ["INPUT_MOD_VERSION"]
     mod_desc = os.environ["INPUT_MOD_DESC"]
     mod_content = os.environ["INPUT_MOD_CONTENT"]
+    mod_filepath = os.environ["INPUT_MOD_FILEPATH"]
 
     mod = {
         "id": mod_id,
@@ -39,7 +40,14 @@ def main():
 
     url = "https://mod.3dmgame.com/api/UpModData"
 
-    res = requests.post(url, data=values)
+    res = None
+
+    if mod_filepath != "":
+        mod_file_stream = open(mod_filepath, "rb")
+        files = {"file": mod_file_stream}
+        res = requests.post(url, data=values, files=files)
+    else:
+        res = requests.post(url, data=values)
 
     print(f"::set-output name=RESPONSE::{res.text}")
 
