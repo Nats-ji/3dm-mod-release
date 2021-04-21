@@ -33,7 +33,7 @@ jobs:
         run: echo "::set-output name=RELEASE_VERSION::${GITHUB_REF#refs/*/}"
 
       - name: Release to 3DM
-        uses: Nats-ji/3dm-release-action@v1
+        uses: Nats-ji/3dm-release-action@v1.0.0
         with:
           appid: ${{ secrets.APPID }}
           appkey: ${{ secrets.APPKEY }}
@@ -70,7 +70,7 @@ jobs:
 steps:
   - name: Release to 3DM
     id: 3dm_release
-    uses: Nats-ji/3dm-release-action@v1
+    uses: Nats-ji/3dm-release-action@v1.0.0
     with:
       appid: ${{ secrets.APPID }}
       appkey: ${{ secrets.APPKEY }}
