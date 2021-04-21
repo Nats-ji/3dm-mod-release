@@ -5,17 +5,54 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - id: get_sha
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      - name: Self test
+
+      - name: Set environment variables
+        uses: antifree/json-to-variables@v1.0.1
+        with:
+          filename: metadata.json
+          prefix: META
+
+      - name: Add commit hash to env var
+        run: |
+          echo "META_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Prepare test mod files
+        run: |
+          mkdir ./html ./doc ./release
+          cp ./${{ env.META_MOD_CONTENT }} ./doc/${{ env.META_MOD_CONTENT }}
+
+      - name: Convert README.md to HTML
+        uses: BaileyJM02/markdown-to-pdf@v1
+        with:
+          input_dir: doc
+          output_dir: html
+          build_html: true
+
+      - name: Remove pdf file
+        run: rm ./html/*.pdf
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Artifact
+          path: html
+
+      - name: Zip release test file
+        uses: TheDoctor0/zip-release@0.4.1
+        with:
+          filename: ../release/${{ env.META_MOD_FILE_NAME }}_${{ env.META_SHA_SHORT }}.zip
+          directory: ./html/
+
+      - name: Test mod uploading
         id: selftest
         uses: Nats-ji/3dm-release-action@master
         with:
           appid: ${{secrets.APPID}}
           appkey: ${{secrets.APPKEY}}
-          mod_id: "174122"
-          mod_version: ${{ steps.get_sha.outputs.sha_short }}
-          mod_content: README.md
+          mod_id: ${{ env.META_MOD_ID }}
+          mod_title: ${{ env.META_MOD_TITLE }}
+          mod_version: ${{ env.META_SHA_SHORT }}
+          mod_content: ${{ env.META_MOD_CONTENT }}
+          mod_filepath: ./release/${{ env.META_MOD_FILE_NAME }}_${{ env.META_SHA_SHORT }}.zip
 
       - name: Check outputs
         run: |
