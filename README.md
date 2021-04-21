@@ -6,6 +6,10 @@
 
 [中文描述](https://github.com/Nats-ji/3dm-release-action/blob/master/README_zh.md)
 
+Github Link: [https://github.com/Nats-ji/3dm-release-action](https://github.com/Nats-ji/3dm-release-action)
+
+Github Marketplace: [https://github.com/marketplace/actions/3dm-mod-release-action](https://github.com/marketplace/actions/3dm-mod-release-action)
+
 A github action for updating mod information and mod files on [3DM mod site](https://mod.3dmgame.com/).
 
 You can use this Github Action to automate your mod release workflow, if the source code of your mod is hosted on Github.

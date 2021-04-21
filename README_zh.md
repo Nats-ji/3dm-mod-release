@@ -8,13 +8,15 @@
 
 Github 地址: [https://github.com/Nats-ji/3dm-release-action](https://github.com/Nats-ji/3dm-release-action)
 
+Github Marketplace: [https://github.com/marketplace/actions/3dm-mod-release-action](https://github.com/marketplace/actions/3dm-mod-release-action)
+
 一个用来更新[3DM MOD站](https://mod.3dmgame.com/)里Mod信息和Mod文件的Github Action。
 
 如果你的Mod源码是托管于Github的话，你可以使用这个Github Action来自动化你的Mod更新流程。
 
 你可以设置在Github上发布Release时，自动上传最新版的Release文件到3DM Mod站上，同时也可以更新Mod的各种信息。
 
-特别感谢小莫大佬提供Mod更新API。
+特别感谢小莫大佬提供的Mod更新API。
 
 ### 示例 Workflow 文件
 

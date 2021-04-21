@@ -1,4 +1,4 @@
-name: "3dm Mod Release Action"
+name: "3DM Mod Release Action"
 description: "Update mod files and mod information on 3dm mod site."
 author: "Mingming Cui"
 branding:
