@@ -51,6 +51,8 @@ jobs:
           mod_id: ${{ env.META_MOD_ID }}
           mod_title: ${{ env.META_MOD_TITLE }}
           mod_version: ${{ env.META_SHA_SHORT }}
+          mod_tags: ${{ env.META_MOD_TAGS }}
+          mod_desc: ${{ env.META_MOD_DESC }}
           mod_content: ${{ env.META_MOD_CONTENT }}
           mod_filepath: ./release/${{ env.META_MOD_FILE_NAME }}_${{ env.META_SHA_SHORT }}.zip
 
