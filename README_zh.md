@@ -10,6 +10,10 @@ Github 地址: [https://github.com/Nats-ji/3dm-release-action](https://github.co
 
 一个用来更新[3DM MOD站](https://mod.3dmgame.com/)里Mod信息和Mod文件的Github Action。
 
+如果你的Mod源码是托管于Github的话，你可以使用这个Github Action来自动化你的Mod更新流程。
+
+你可以设置在Github上发布Release时，自动上传最新版的Release文件到3DM Mod站上，同时也可以更新Mod的各种信息。
+
 特别感谢小莫大佬提供Mod更新API。
 
 ### 示例 Workflow 文件
@@ -39,6 +43,7 @@ jobs:
           mod_title: My Mod
           mod_version: ${{ steps.get_version.outputs.RELEASE_VERSION }} #调用上一步获取的版本号
           mod_content: README.md
+          mod_filepath: release/my_mod_1.2.2.zip
 ```
 
 ### 输入参数
@@ -53,6 +58,7 @@ jobs:
 | `mod_version` （可选） | Mod的版本号 | v1.2.5 |
 | `mod_desc` （可选） | Mod的简单描述 | 我的超强修改器Mod |
 | `mod_content` （可选） | Mod的详情介绍的Markdown文件路径 | README.md |
+| `mod_filepath` （可选） | Mod文件路径（文件格式: `zip/7z/rar`, 大小限制: 10mb） | release/my_mod.zip |
 
 ### 输出
 
@@ -73,6 +79,7 @@ steps:
       mod_id: 548964
       mod_title: My Mod
       mod_version: 1.2.2
+      mod_filepath: release/my_mod_1.2.2.zip
 
 - name: Check outputs
     run: |
