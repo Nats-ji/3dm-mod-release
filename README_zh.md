@@ -48,7 +48,7 @@ jobs:
           mod_filepath: release/my_mod_1.2.2.zip
 ```
 
-### 输入参数
+## 输入参数
 
 | 输入参数  | 描述 | 示例 |
 | ---------|------|------|
@@ -62,13 +62,13 @@ jobs:
 | `mod_content` （可选） | Mod的详情介绍的Markdown文件路径 | README.md |
 | `mod_filepath` （可选） | Mod文件路径（文件格式: `zip/7z/rar`, 大小限制: 10mb） | release/my_mod.zip |
 
-### 输出
+## 输出
 
 | 输出 | 描述 |
 |------|-----|
 | `response`  | 服务器的返回内容  |
 
-## 如何使用输出
+### 如何使用输出
 
 ```yaml
 steps:
@@ -87,3 +87,7 @@ steps:
     run: |
     echo ${{ steps.3dm_release.outputs.RESPONSE }}
 ```
+
+## 贡献
+
+欢迎在Github上发起Pull Request来贡献此项目。

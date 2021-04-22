@@ -48,7 +48,7 @@ jobs:
           mod_filepath: release/my_mod_1.2.2.zip
 ```
 
-### Inputs
+## Inputs
 
 | Input                      | Description                                                       | Example                  |
 |----------------------------|-------------------------------------------------------------------|--------------------------|
@@ -62,13 +62,13 @@ jobs:
 | `mod_content` (optional)   | File path to the Markdown file for Mod descriptions               | README.md                |
 | `mod_filepath` (optional)  | Path to your mod file (file format: `zip/7z/rar`, max size: 10mb) | release/my_mod.zip       |
 
-### Outputs
+## Outputs
 
 | Output      | Description               |
 |-------------|---------------------------|
 | `response`  | Response from the server  |
 
-## Using outputs
+### Using outputs
 
 ```yaml
 steps:
@@ -87,3 +87,7 @@ steps:
     run: |
     echo ${{ steps.3dm_release.outputs.RESPONSE }}
 ```
+
+## Contributing
+
+Feel free to make Pull Requests to contribute to this repo. 
