@@ -1,3 +1,6 @@
+### This project is moved to https://github.com/GlossMod/ActionUpdateMod
+### 本项目已经移至 https://github.com/GlossMod/ActionUpdateMod
+
 # 3DM MOD Release Action
 
 [![Actions Status](https://github.com/Nats-ji/3dm-release-action/workflows/Lint/badge.svg)](https://github.com/Nats-ji/3dm-release-action/actions) [![Actions Status](https://github.com/Nats-ji/3dm-release-action/workflows/Integration%20Test/badge.svg)](https://github.com/Nats-ji/3dm-release-action/actions)
